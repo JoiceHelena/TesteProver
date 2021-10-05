@@ -1,0 +1,51 @@
+﻿@model TesteProverDominio.Entidades.Contato
+
+@{
+    ViewBag.Title = "Contato";
+}
+
+@using (Html.BeginForm("Create", "Contato"))
+{
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nome)
+        @Html.ValidationMessageFor(model => model.Nome)
+    </div>
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Telefone)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Telefone)
+        @Html.ValidationMessageFor(model => model.Telefone)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DataNascimento, "Data de Nascimento")
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.DataNascimento)
+        @Html.ValidationMessageFor(model => model.DataNascimento)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Sexo)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Sexo)
+        @Html.ValidationMessageFor(model => model.Sexo)
+    </div>
+
+    @*<div class="editor-label">
+            @Html.LabelFor(model => model.Cargo)
+        </div>
+    <div class="editor-field">
+            @Html.DropDownListFor(model => model.Cargo.Id, new SelectList(ViewBag.ListaCargo as List<TesteProverDominio.Entidades.Cargo>, "Id", "Descricao"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Cargo.Id, "", new { @class = "text-danger" })
+        </div>*@
+    <input id="btnSalvar" type="submit" value="Salvar" class="btn btn-default" />
+
+}
